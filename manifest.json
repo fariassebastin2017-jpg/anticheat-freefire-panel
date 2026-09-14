@@ -1,0 +1,15 @@
+{
+  "name": "Panel Anti-Cheat - Free Fire",
+  "short_name": "Anti-Cheat",
+  "description": "Nivel de sospecha por jugador de la comunidad.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f1115",
+  "theme_color": "#0f1115",
+  "icons": [
+    { "src": "icon-192.jpg", "sizes": "192x192", "type": "image/jpeg", "purpose": "any" },
+    { "src": "icon-512.jpg", "sizes": "512x512", "type": "image/jpeg", "purpose": "any" }
+  ]
+}
