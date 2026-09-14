@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel Anti-Cheat · Free Fire</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0f1115" />
+  <link rel="icon" href="icon-192.jpg" />
+  <link rel="apple-touch-icon" href="icon-192.jpg" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Anti-Cheat" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>🛡️ Panel Anti-Cheat</h1>
+      <p class="sub">Comunidad Free Fire — nivel de sospecha por jugador</p>
+    </header>
+
+    <!-- ---------------------------------------------------------- login -->
+    <section id="loginCard" class="card">
+      <label class="field-label" for="adminKeyInput">Admin key</label>
+      <div class="row">
+        <input id="adminKeyInput" type="password" autocomplete="current-password"
+               placeholder="Pegá tu admin key" class="grow" />
+        <button id="loginBtn">Entrar</button>
+      </div>
+      <p class="hint">La clave queda solo en este dispositivo, mientras tengas la pestaña abierta.</p>
+      <div id="loginError" class="error-text"></div>
+    </section>
+
+    <!-- ------------------------------------------------------------ app -->
+    <div id="appSection" hidden>
+      <nav class="tabs">
+        <button class="tab is-active" data-tab="players">Jugadores</button>
+        <button class="tab" data-tab="signatures">Catálogo de cheats</button>
+        <button id="logoutBtn" class="tab tab-right">Salir</button>
+      </nav>
+
+      <div id="globalError" class="error-text"></div>
+
+      <!-- ======================================================= JUGADORES -->
+      <section id="playersTab">
+        <!-- listado -->
+        <div id="playersView">
+          <div class="card">
+            <div class="card-head">
+              <strong>Jugadores</strong>
+              <button id="refreshBtn" class="secondary small">Actualizar</button>
+            </div>
+            <p class="hint">Ordenados de más a menos sospechoso. Tocá uno para ver su historial.</p>
+            <div id="playersList" class="list"></div>
+          </div>
+
+          <div class="card">
+            <strong>Agregar jugador</strong>
+            <p class="hint">Genera el token que ese jugador va a poner en su app.</p>
+            <div class="row">
+              <input id="ffidInput" placeholder="ID de Free Fire" class="grow" />
+              <input id="nameInput" placeholder="Nombre (opcional)" class="grow" />
+              <button id="addPlayerBtn">Crear</button>
+            </div>
+            <div id="tokenBox" class="token-box" hidden></div>
+          </div>
+        </div>
+
+        <!-- detalle -->
+        <div id="detailView" hidden>
+          <button id="backBtn" class="secondary small">← Volver al listado</button>
+          <div class="card">
+            <h2 id="detailTitle"></h2>
+            <div id="detailMeta" class="meta-grid"></div>
+            <div class="row" style="margin-top:16px">
+              <button id="regenBtn" class="secondary small">Regenerar token</button>
+              <button id="deleteBtn" class="danger small">Borrar jugador</button>
+            </div>
+            <div id="detailTokenBox" class="token-box" hidden></div>
+          </div>
+          <h3 class="section-title">Historial de reportes</h3>
+          <div id="detailReports"></div>
+        </div>
+      </section>
+
+      <!-- ========================================================= FIRMAS -->
+      <section id="signaturesTab" hidden>
+        <div class="card">
+          <strong>Agregar una firma</strong>
+          <p class="hint">
+            Cargá acá los paquetes de Android o procesos de PC que la comunidad
+            <em>confirmó</em> que son cheat. Se aplica al toque, sin tocar código.
+          </p>
+          <div class="row">
+            <select id="sigKind" class="grow">
+              <option value="known_mod_menu_package">Android · mod menu</option>
+              <option value="known_esp_package">Android · ESP / wallhack</option>
+              <option value="known_aimlock_package">Android · aimlock</option>
+              <option value="known_cheat_process">PC · proceso de cheat</option>
+              <option value="known_injector_process">PC · inyector</option>
+            </select>
+            <input id="sigValue" placeholder="com.paquete.cheat  ó  cheat.exe" class="grow" />
+            <input id="sigNote" placeholder="Nota (opcional)" class="grow" />
+            <button id="addSigBtn">Agregar</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <strong>Firmas cargadas</strong>
+            <button id="refreshSigBtn" class="secondary small">Actualizar</button>
+          </div>
+          <div id="sigList" class="list"></div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="foot">
+      Sistema voluntario: cada jugador instala el cliente por su cuenta.
+      Un puntaje alto es una señal para revisar, no una prueba.
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
