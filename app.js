@@ -20,6 +20,7 @@ const TIPO_HALLAZGO = {
   xposed_or_lsposed_detected: 'Xposed / LSPosed activo',
   suspicious_overlay_active: 'Cheat dibujando sobre el juego',
   injected_dll_detected: 'DLL inyectada en el juego',
+  suspicious_external_process: 'Programa externo sospechoso (posible cheat)',
   keyword_match: 'Palabra clave de cheat encontrada',
 };
 
