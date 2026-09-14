@@ -20,9 +20,11 @@ const TIPO_HALLAZGO = {
   xposed_or_lsposed_detected: 'Xposed / LSPosed activo',
   suspicious_overlay_active: 'Cheat dibujando sobre el juego',
   injected_dll_detected: 'DLL inyectada en el juego',
+  keyword_match: 'Palabra clave de cheat encontrada',
 };
 
 const TIPO_FIRMA = {
+  keyword: 'Palabra clave',
   known_mod_menu_package: 'Android · mod menu',
   known_esp_package: 'Android · ESP / wallhack',
   known_aimlock_package: 'Android · aimlock',
