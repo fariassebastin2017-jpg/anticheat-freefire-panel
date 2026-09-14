@@ -89,16 +89,19 @@
         <div class="card">
           <strong>Agregar una firma</strong>
           <p class="hint">
-            Cargá acá los paquetes de Android o procesos de PC que la comunidad
-            <em>confirmó</em> que son cheat. Se aplica al toque, sin tocar código.
+            Cargá acá lo que la comunidad <em>confirmó</em> que es cheat. Se aplica
+            al toque, sin tocar código. Lo más útil es <strong>Palabra clave</strong>:
+            caza cualquier app, ventana o programa cuyo nombre la contenga
+            (ej: "aimbot", "ff hack"). Los otros tipos son para nombres exactos.
           </p>
           <div class="row">
             <select id="sigKind" class="grow">
-              <option value="known_mod_menu_package">Android · mod menu</option>
-              <option value="known_esp_package">Android · ESP / wallhack</option>
-              <option value="known_aimlock_package">Android · aimlock</option>
-              <option value="known_cheat_process">PC · proceso de cheat</option>
-              <option value="known_injector_process">PC · inyector</option>
+              <option value="keyword">Palabra clave (en cualquier nombre)</option>
+              <option value="known_mod_menu_package">Android · paquete exacto de mod menu</option>
+              <option value="known_esp_package">Android · paquete exacto de ESP</option>
+              <option value="known_aimlock_package">Android · paquete exacto de aimlock</option>
+              <option value="known_cheat_process">PC · nombre exacto de proceso</option>
+              <option value="known_injector_process">PC · nombre exacto de inyector</option>
             </select>
             <input id="sigValue" placeholder="com.paquete.cheat  ó  cheat.exe" class="grow" />
             <input id="sigNote" placeholder="Nota (opcional)" class="grow" />
