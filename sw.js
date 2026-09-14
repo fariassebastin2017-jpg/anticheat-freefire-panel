@@ -5,7 +5,7 @@
 //
 // Subí el número de CACHE cada vez que cambien los archivos del panel: eso hace
 // que los celulares que ya lo tienen instalado se actualicen solos.
-const CACHE = 'anticheat-panel-v3';
+const CACHE = 'anticheat-panel-v4';
 
 const SHELL = [
   './',
